@@ -1,23 +1,24 @@
-PORTFOLIO — WORKFLOW IN DESIGN
+PORTFOLIO — ACTUALISER LE SITE
 
-MODIFIER UNE PAGE
-1. Modifie la page dans InDesign.
-2. Réexporte ton document en HTML5.
-3. Remplace les fichiers exportés InDesign correspondants dans publication-web-resources/html/ et publication-web-resources/image/.
-4. Ne touche pas à index.html, main.css ou main.js.
+1. Enregistre tes modifications dans InDesign et vérifie dans Liens qu'il ne manque aucune image.
+2. Exporte le document complet avec Fichier > Exporter > HTML5 dans un nouveau dossier, séparé de « Main structure ».
+3. Ouvre Terminal. Écris python3 suivi d'un espace, puis glisse le fichier actualiser.py dans Terminal. Ajoute un espace et glisse le dossier exporté (celui qui contient publication-web-resources). Appuie sur Entrée.
 
-AJOUTER UNE PAGE
-1. Exporte la nouvelle page depuis InDesign.
-2. Copie son HTML dans publication-web-resources/html/.
-3. Ouvre publication-web-resources/script/main.js.
-4. Ajoute le nom du nouveau fichier dans le tableau pages.
+Exemple pour l'export local actuel :
+python3 "Main structure/actualiser.py" "Site_portfolio"
+(cet exemple suppose que Terminal est ouvert dans le dossier parent de Main structure)
 
-MODIFIER OU AJOUTER DES VIDEOS YOUTUBE
-1. Ouvre publication-web-resources/script/main.js.
-2. Modifie la liste videoUrls : ajoute une URL YouTube entre guillemets, une par ligne.
-3. Les liens youtube.com/watch?v=..., youtu.be/... et youtube.com/embed/... sont acceptes.
-4. Dans le tableau pages, deplace la ligne { videoUrl: getYouTubeEmbedUrl(videoUrls[0]) } a l'endroit souhaite.
-5. Pour chaque URL ajoutee a videoUrls, ajoute une ligne video correspondante dans pages; deplace cette ligne pour regler sa position.
+L'import vérifie la numérotation et les références locales des pages avant de remplacer l'export du site. Il met à jour automatiquement leur nombre et leur ordre. Il ne peut pas garantir qu'InDesign a correctement exporté une image dont le lien source est manquant.
 
-IMPORTANT
-Le site adapte automatiquement les pages InDesign 1920x1080 à la fenêtre du navigateur et les affiche en scroll vertical, une page par écran.
+4. Vérifie le résultat en ouvrant Main structure/index.html dans un navigateur, notamment les images, les textes et les vidéos. Pour un aperçu par serveur local, dans Terminal :
+cd "chemin/vers/Main structure"
+python3 -m http.server 8000
+Puis ouvre http://localhost:8000. Arrête le serveur avec Ctrl+C.
+5. Publie ensuite le contenu de Main structure sur le dépôt GitHub qui héberge le site. L'import local ne publie rien automatiquement.
+
+VIDÉOS
+Ouvre videos.js avec un éditeur de texte. Chaque ligne contient l'URL et apresPage : le numéro de la page InDesign après laquelle placer la vidéo, couverture comprise. Plusieurs vidéos peuvent suivre une même page, dans leur ordre dans le fichier. Tu peux utiliser une URL YouTube classique, youtu.be ou embed.
+
+Si tu ajoutes, supprimes ou réorganises des pages dans InDesign, vérifie les numéros apresPage : les vidéos suivent les numéros, pas les titres des projets. Une vidéo placée après un numéro de page inexistant ne sera pas affichée.
+
+Ne modifie pas pages-indesign.js : il est régénéré par actualiser.py. L'ancienne page-7-export et les anciennes ressources sont conservées comme archives ; le site utilise export-indesign.

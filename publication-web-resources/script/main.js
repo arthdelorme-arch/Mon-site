@@ -1,9 +1,3 @@
-const videoUrls = [
-  "https://www.youtube.com/embed/Z8yN9na2Vdk?si=kF77_Rel-zitpQgv",
-  "https://www.youtube.com/embed/uo8sx6HxnMU?si=s4ggq_T3djfTUYij",
-  "https://www.youtube.com/embed/Ei_qC6ZZE-U?si=QQfi3s9xqOvn-KQR" // Ajoute une URL YouTube par ligne pour insérer plusieurs vidéos.
-];
-
 function getYouTubeEmbedUrl(link) {
   let url;
   try {
@@ -19,24 +13,14 @@ function getYouTubeEmbedUrl(link) {
   return videoId ? `https://www.youtube.com/embed/${videoId}` : link;
 }
 
-const pages = [
-  "publication.html",
-  "publication-1.html",
-  "publication-2.html",
-  { videoUrl: getYouTubeEmbedUrl(videoUrls[0]) },
-  "publication-3.html",
-  // Deplace les entrees video dans cette liste pour changer leur position.
-  { videoUrl: getYouTubeEmbedUrl(videoUrls[1]) },
-  "publication-4.html",
-  "publication-5.html",
-  "publication-6.html",
-  { videoUrl: getYouTubeEmbedUrl(videoUrls[2]) },
-  "publication-7.html",
-  "publication-8.html"
-];
+const pages = indesignPages.flatMap((page, index) => [
+  page,
+  ...videos.filter(video => video.apresPage === index + 1)
+    .map(video => ({ videoUrl: getYouTubeEmbedUrl(video.url) }))
+]);
 
 const portfolio = document.getElementById("portfolio");
-const basePath = "publication-web-resources/html/";
+const basePath = "export-indesign/publication-web-resources/html/";
 const DESIGN_WIDTH = 1920;
 const DESIGN_HEIGHT = 1080;
 
@@ -53,14 +37,14 @@ function fitPage(iframe) {
 }
 
 function createPage(page, index) {
-  const isVideo = typeof page !== "string";
+  const isVideo = typeof page === "object" && Boolean(page.videoUrl);
   const section = document.createElement("section");
   section.className = "portfolio-page";
   section.id = `page-${index + 1}`;
   section.setAttribute("aria-label", `Page ${index + 1}`);
 
   const iframe = document.createElement("iframe");
-  iframe.src = isVideo ? page.videoUrl : basePath + page;
+  iframe.src = isVideo ? page.videoUrl : typeof page === "string" ? basePath + page : page.pageUrl;
   iframe.title = isVideo ? `Vidéo YouTube ${index + 1}` : `Portfolio page ${index + 1}`;
   iframe.setAttribute("scrolling", "no");
   iframe.loading = index === 0 ? "eager" : "lazy";
