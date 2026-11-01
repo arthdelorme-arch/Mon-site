@@ -10,7 +10,7 @@ function makeButton(project,index){const b=document.createElement('button');b.ty
 projets.forEach((project,index)=>{
  const button=makeButton(project,index), col=index%4, row=Math.floor(index/4);
  Object.assign(button.style,{left:`${(120+col*440)/1920*100}%`,top:`${(192+row*456)/1080*100}%`,width:`${360/1920*100}%`,height:`${390/1080*100}%`});gridLinks.append(button);
- const mobile=makeButton(project,index), img=document.createElement('img'), label=document.createElement('span');img.src=`grille/vignette-${String(index+1).padStart(2,'0')}.jpg`;img.alt='';img.loading='lazy';label.textContent=`${String(index+1).padStart(2,'0')}  ${project.nom}`;mobile.append(img,label);mobileGrid.append(mobile);
+ const mobile=mobileGrid.children[index]; if (mobile) mobile.addEventListener('click',()=>openProject(index,mobile));
 });
 // Les pages 3 à 9 du document sont les moodboards des projets 1 à 7.
 const imagesMoodboard = [8, 5, 4, 5, 5, 5, 6].map((count, project) =>

@@ -17,8 +17,10 @@
   <meta property="og:image" content="https://delormeproduction.com/grille/grille.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://delormeproduction.com/#website","url":"https://delormeproduction.com/","name":"Delorme Production","alternateName":"Portfolio d’Arthur Delorme","inLanguage":"fr","publisher":{"@id":"https://delormeproduction.com/#person"}},{"@type":"Person","@id":"https://delormeproduction.com/#person","name":"Arthur Delorme","url":"https://delormeproduction.com/","jobTitle":"Motion designer 2D/3D","sameAs":["https://www.instagram.com/delormeproduction/","https://www.linkedin.com/in/arthur-delorme-082b8b275/"]}]}</script>
-  <link rel="stylesheet" href="https://use.typekit.net/ech3qon.css">
-  <link rel="stylesheet" href="portfolio.css?v=light-1">
+  <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+  <link rel="stylesheet" href="https://use.typekit.net/ech3qon.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://use.typekit.net/ech3qon.css"></noscript>
+  <link rel="stylesheet" href="portfolio.css?v=perf-1">
 </head>
 <body>
   <main>
@@ -32,8 +34,8 @@
       <a class="discover" href="#projets">Découvrir les projets <span aria-hidden="true">↓</span></a>
     </section>
     <section class="work" id="projets" aria-label="Projets">
-      <div class="desktop-grid" id="desktop-grid"><img src="grille/grille.jpg" alt="" aria-hidden="true"><div class="grid-links" id="grid-links"></div></div>
-      <div class="mobile-work"><header><strong>DELORME / PROJETS</strong><span>PORTFOLIO / 2026</span></header><div id="mobile-grid" class="mobile-grid"></div></div>
+      <div class="desktop-grid" id="desktop-grid"><picture><source media="(min-width: 701px)" srcset="grille/grille.jpg"><img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="" aria-hidden="true" width="1920" height="1080"></picture><div class="grid-links" id="grid-links"></div></div>
+      <div class="mobile-work"><header><strong>DELORME / PROJETS</strong><span>PORTFOLIO / 2026</span></header><div id="mobile-grid" class="mobile-grid"><button type="button" aria-label="Ouvrir le projet Wood and Volume"><img src="grille/vignette-01.jpg" alt="" width="360" height="360" loading="eager" fetchpriority="high"><span>01  Wood and Volume</span></button><button type="button" aria-label="Ouvrir le projet Générique Laylow"><img src="grille/vignette-02.jpg" alt="" width="360" height="360" loading="eager" fetchpriority="high"><span>02  Générique Laylow</span></button><button type="button" aria-label="Ouvrir le projet Bic Brosse"><img src="grille/vignette-03.jpg" alt="" width="360" height="360" loading="lazy"><span>03  Bic Brosse</span></button><button type="button" aria-label="Ouvrir le projet Exposition Tarantino"><img src="grille/vignette-04.jpg" alt="" width="360" height="360" loading="lazy"><span>04  Exposition Tarantino</span></button><button type="button" aria-label="Ouvrir le projet Couloir 53"><img src="grille/vignette-05.jpg" alt="" width="360" height="360" loading="lazy"><span>05  Couloir 53</span></button><button type="button" aria-label="Ouvrir le projet Ravage"><img src="grille/vignette-06.jpg" alt="" width="360" height="360" loading="lazy"><span>06  Ravage</span></button><button type="button" aria-label="Ouvrir le projet Pochette DVD"><img src="grille/vignette-07.jpg" alt="" width="360" height="360" loading="lazy"><span>07  Pochette DVD</span></button></div></div>
     </section>
     <section class="project-index" aria-labelledby="project-index-title">
       <div><h1 id="project-index-title">Delorme Production — Arthur Delorme</h1><p>Motion designer 2D/3D · CGI et VFX publicitaires · Étudiant à GOBELINS Paris</p></div>
@@ -44,6 +46,6 @@
   <dialog id="project-dialog" aria-labelledby="project-title">
     <div class="dialog-shell"><div class="modal-controls"><button type="button" id="previous-project" aria-label="Projet précédent">‹</button><button type="button" id="next-project" aria-label="Projet suivant">›</button><button type="button" id="close-dialog" aria-label="Fermer">×</button></div><div class="dialog-content"><div id="project-media" class="media"></div><aside class="details"><p class="project-number" id="project-number"></p><h2 id="project-title"></h2><div id="project-description"></div><p class="media-label" id="media-label"></p></aside></div></div>
   </dialog>
-  <script src="projets.js?v=2"></script><script src="descriptions-indesign.js"></script><script src="portfolio.js?v=2"></script>
+  <script src="projets.js?v=2"></script><script src="descriptions-indesign.js"></script><script src="portfolio.js?v=perf-1"></script>
 </body>
 </html>
