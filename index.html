@@ -1,15 +1,34 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
-  <link rel="stylesheet" href="publication-web-resources/css/main.css">
+  <meta charset="utf-8">
+  <script>if (location.hostname === '127.0.0.1') { const local = new URL(location.href); local.hostname = 'localhost'; location.replace(local.href); }</script>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Portfolio d’Arthur Delorme : motion design, 3D et direction artistique.">
+  <title>Arthur Delorme — Portfolio</title>
+  <link rel="stylesheet" href="https://use.typekit.net/ech3qon.css">
+  <link rel="stylesheet" href="portfolio.css?v=light-1">
 </head>
 <body>
-  <main id="portfolio" aria-label="Portfolio"></main>
-  <script src="videos.js"></script>
-  <script src="pages-indesign.js"></script>
-  <script src="publication-web-resources/script/main.js"></script>
+  <main>
+    <section class="cover" aria-label="Accueil">
+      <nav class="cover-contact" aria-label="Contacts">
+        <a href="mailto:delormearthur@hotmail.com">MAIL ↗</a>
+        <a href="https://www.instagram.com/delormeproduction/" target="_blank" rel="noopener noreferrer">INSTAGRAM ↗</a>
+        <a href="https://www.linkedin.com/in/arthur-delorme-082b8b275/" target="_blank" rel="noopener noreferrer">LINKEDIN ↗</a>
+      </nav>
+      <div class="cover-stage"><iframe title="Couverture du portfolio" src="export-indesign/publication-web-resources/html/publication.html" scrolling="no"></iframe></div>
+      <a class="discover" href="#projets">Découvrir les projets <span aria-hidden="true">↓</span></a>
+    </section>
+    <section class="work" id="projets" aria-label="Projets">
+      <div class="desktop-grid" id="desktop-grid"><img src="grille/grille.jpg" alt="" aria-hidden="true"><div class="grid-links" id="grid-links"></div></div>
+      <div class="mobile-work"><header><strong>DELORME / PROJETS</strong><span>PORTFOLIO / 2026</span></header><div id="mobile-grid" class="mobile-grid"></div></div>
+    </section>
+    <footer><span>ARTHUR DELORME / PORTFOLIO</span><a href="mailto:delormearthur@hotmail.com">ME CONTACTER ↗</a><a href="https://www.instagram.com/delormeproduction/">INSTAGRAM ↗</a></footer>
+  </main>
+  <dialog id="project-dialog" aria-labelledby="project-title">
+    <div class="dialog-shell"><div class="modal-controls"><button type="button" id="previous-project" aria-label="Projet précédent">‹</button><button type="button" id="next-project" aria-label="Projet suivant">›</button><button type="button" id="close-dialog" aria-label="Fermer">×</button></div><div class="dialog-content"><div id="project-media" class="media"></div><aside class="details"><p class="project-number" id="project-number"></p><h2 id="project-title"></h2><div id="project-description"></div><p class="media-label" id="media-label"></p></aside></div></div>
+  </dialog>
+  <script src="projets.js?v=2"></script><script src="descriptions-indesign.js"></script><script src="portfolio.js?v=2"></script>
 </body>
 </html>
