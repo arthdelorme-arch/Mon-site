@@ -17,3 +17,6 @@ APERÇU ET PUBLICATION
 Dans Terminal, ouvre ce dossier et lance : python3 -m http.server 8000
 Ouvre http://localhost:8000 puis vérifie les projets, les vidéos, la fermeture et le mobile. Ctrl+C arrête le serveur.
 La modification locale ne publie rien sur GitHub ; il faut comparer puis envoyer les fichiers ajoutés ou modifiés sur le dépôt.
+
+RÉFÉRENCEMENT
+Après toute modification des noms ou descriptions dans projets.js et descriptions-indesign.js, exécuter node outils/generer-seo.cjs depuis Main structure. Publier les pages projets et sitemap.xml ainsi régénérés. Si un projet est ajouté, actualiser aussi les slugs du script et les liens de l’index dans index.html.
