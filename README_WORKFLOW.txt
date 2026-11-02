@@ -20,3 +20,6 @@ La modification locale ne publie rien sur GitHub ; il faut comparer puis envoyer
 
 RÉFÉRENCEMENT
 Après toute modification des noms ou descriptions dans projets.js et descriptions-indesign.js, exécuter node outils/generer-seo.cjs depuis Main structure. Publier les pages projets et sitemap.xml ainsi régénérés. Si un projet est ajouté, actualiser aussi les slugs du script et les liens de l’index dans index.html.
+
+STATISTIQUES
+La mesure Cloudflare Web Analytics ne dépose pas de cookies. Pour exclure ses propres visites, ouvrir https://delormeproduction.com/?stats=exclure sur chacun de ses navigateurs et appareils ; ?stats=inclure annule ce réglage. L’exclusion est conservée dans le stockage local du navigateur et doit être réactivée après effacement des données ou en navigation privée. Les visites des autres personnes et réseaux ne sont pas concernées.
