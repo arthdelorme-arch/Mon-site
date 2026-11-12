@@ -8,3 +8,6 @@ const projets = [
  {nom:'Ravage',miniature:'06_ravage.jpg',description:['RAVAGE est un projet personnel réalisé dans le cadre d’un essai photographique. Il s’agit d’un shooting photo sur fond vert. Ce projet a pour but de mettre en exergue le travail de post-production.','Souvent négligée, elle prouve un point : même avec peu de budget, la post-production peut compenser un manque d’expérience en tant que réalisateur en prise de vue réelle.','Inspirée par Marty Supreme, la direction artistique s’oriente vers une atmosphère sombre et cinématique, appuyée par le design de la balle de ping-pong recréée en 3D.']},
  {nom:'Pochette DVD',miniature:'Still_2026-10-07_142209_1.25.1.png',video:'qsJIRgryg9A',description:['Projet réalisé pour un court métrage de fin d’études de la NYU.','Création complète d’une pochette DVD, de son design graphique à son intégration en 3D.','J’ai réalisé la modélisation, le texturing, le matchmove de caméra, le lighting et le rendu, puis le compositing final pour intégrer l’objet de manière réaliste dans le plan.']}
 ];
+
+// Ordre d’affichage ; les indices restent liés aux pages InDesign et aux médias d’origine.
+const ordreProjets = [0, 5, 6, 4, 1, 2, 3];
